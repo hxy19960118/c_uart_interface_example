@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "thread": "cpp",
+        "functional": "cpp",
+        "*.ipp": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "mutex": "cpp"
+    }
+}

@@ -212,7 +212,7 @@ Lcm_Interface:: Lcm_Interface() : lcm{"udpm://239.255.76.67:7667?ttl=1"}{ //  //
     send_tid = 0; // send thread id
 
     mav_sys_id = 0;//mav_sys_id_;
-    max_num_quad = 4;
+    max_num_quad = 5;
 
     has_init = false;
 
@@ -225,7 +225,7 @@ Lcm_Interface:: ~Lcm_Interface() {}
 // --------------------------------------------------------------------------------------------------- 
 int Lcm_Interface:: init(int mav_sys_id_) {
     mav_sys_id = mav_sys_id_;
-    max_num_quad = 4;
+    max_num_quad = 5;
     stringstream ss;
     ss<<base_channel;
     ss<<status_channel;
@@ -377,7 +377,7 @@ void Lcm_Interface:: status_subscrib_thread() {
            ss1<<base_channel;
            ss1<<status_channel;
            ss1<<(i+1);
-	   l_s_handler[i].sub_name_channel = ss1.str();
+	       l_s_handler[i].sub_name_channel = ss1.str();
            lcm.subscribe(l_s_handler[i].sub_name_channel, &Lcm_u_s_Sub_Handler::lcm_subscrib_function, &l_s_handler[i]);
            cout << "Subscrib Channel :" << ss1.str() << endl;
         }
